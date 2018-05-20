@@ -15,6 +15,8 @@ class CreateGroupContactTable extends Migration
     {
         Schema::create('group_contact', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('group_id')->unsigned();
+            $table->integer('contact_id')->unsigned();
             $table->timestamps();
         });
     }
