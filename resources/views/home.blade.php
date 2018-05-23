@@ -21,7 +21,7 @@
                 <div class="card-header bg-info text-white">Liste des groupes</div>
                 <div class="card-body">
                     <p>
-                        <button class="btn btn-success" name="button">Nouveau</button>
+                        <button class="btn btn-success" type="button" data-toggle="modal" data-target="#addGroup" data-whatever="@getbootstrap">Nouveau</button>
                     </p>
                     @include('groups.table')
                 </div>
@@ -32,4 +32,5 @@
     </div>
 
 </div>
+@include('groups.add')
 @endsection
