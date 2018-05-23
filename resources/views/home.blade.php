@@ -2,22 +2,33 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <div class="row">
 
-                    You are logged in!
-                </div>
+        <div class="col-md-2">
+            <div class="list-group">
+                <a href="" class="btn btn-secondary list-group-item list-group-item-action">
+                    Groupes &nbsp; <span class="badge badge-info">{{ $group_number }}</span>
+                </a>
+                <a href="" class="btn btn-secondary list-group-item list-group-item-action">
+                    Contacts &nbsp; <span class="badge badge-info">{{ $contact_number }}</span>
+                </a>
             </div>
         </div>
+
+        <div class="col-md-10">
+            <div class="card card-default">
+                <div class="card-header bg-info text-white">Liste des groupes</div>
+                <div class="card-body">
+                    <p>
+                        <button class="btn btn-success" name="button">Nouveau</button>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
     </div>
+
 </div>
 @endsection
