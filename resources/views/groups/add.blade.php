@@ -8,7 +8,7 @@
         </button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="">
+                <form method="POST" action="{{ route('groups') }}">
                     @csrf
                     <div class="form-group">
                         <label for="name" class="col-form-label">Nom:</label>

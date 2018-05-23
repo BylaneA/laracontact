@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Model\Group;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,16 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $group = new Group;
+        //identification de l'utilisateur qui crée le groupe
+        $group->user_id = Auth::id();
+        //on store le name dans la db
+        $group->name = $request->name;
+        //on sauvegarde
+        $group->save();
+
+        //on revient en arrière
+        return redirect()->back();
     }
 
     /**
