@@ -26,6 +26,7 @@
                     @include('groups.table')
                 </div>
             </div>
+            {{ $groups->links() }}
         </div>
 
     </div>
