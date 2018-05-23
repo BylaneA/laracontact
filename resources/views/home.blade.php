@@ -23,8 +23,8 @@
                     <p>
                         <button class="btn btn-success" name="button">Nouveau</button>
                     </p>
+                    @include('groups.table')
                 </div>
-
             </div>
         </div>
 
