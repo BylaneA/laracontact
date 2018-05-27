@@ -4,7 +4,11 @@
 <div class="container">
 
     <div class="row">
-
+      @if($errors->has('name'))
+        @alert(['type' => 'danger'])
+          Le champs ne peut être vide
+        @endalert
+      @endif
         <div class="col-md-2">
             <div class="list-group">
                 <a href="" class="btn btn-secondary list-group-item list-group-item-action">

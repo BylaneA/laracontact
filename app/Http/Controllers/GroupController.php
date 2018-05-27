@@ -36,6 +36,11 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
+        //On valide les données saisi
+        $this->validate($request, [
+          'name' => 'required|min:4'
+        ]);
+
         $group = new Group;
         //identification de l'utilisateur qui crée le groupe
         $group->user_id = Auth::id();
@@ -44,6 +49,8 @@ class GroupController extends Controller
         //on sauvegarde
         $group->save();
 
+        //on envoie une variable de session
+        $request->session()->flash('success', 'Insertion réussie.');
         //on revient en arrière
         return redirect()->back();
     }
