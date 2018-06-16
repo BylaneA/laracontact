@@ -23,3 +23,8 @@ Route::post('/groups', [
   'uses' => 'GroupController@store',
   'as' => 'groups'
 ]);
+
+Route::get('/group/edit/{group}', [
+  'uses' => 'GroupController@edit',
+  'as' => 'group.edit'
+]);
