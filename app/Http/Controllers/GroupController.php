@@ -89,10 +89,8 @@ class GroupController extends Controller
       $this->validate($request, [
         'name' => 'required|min:4'
       ]);
-      
-        $group->name = $request->name;
-        $group->save();
 
+        $group = Group::where(['id' => $group])->update(['name' => $request->name ]);
         $request->session()->flash('success', 'Changement réussie.');
         return back();
 
