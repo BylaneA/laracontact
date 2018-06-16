@@ -86,7 +86,16 @@ class GroupController extends Controller
      */
     public function update(Request $request, Group $group)
     {
-        //
+      $this->validate($request, [
+        'name' => 'required|min:4'
+      ]);
+      
+        $group->name = $request->name;
+        $group->save();
+
+        $request->session()->flash('success', 'Changement réussie.');
+        return back();
+
     }
 
     /**

@@ -28,3 +28,8 @@ Route::get('/group/edit/{group}', [
   'uses' => 'GroupController@edit',
   'as' => 'group.edit'
 ]);
+
+Route::post('/group/update/{goup}',[
+  'uses' => 'GroupController@update',
+  'as' => 'group.update'
+]);
