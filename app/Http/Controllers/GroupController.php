@@ -91,7 +91,7 @@ class GroupController extends Controller
         'name' => 'required|min:4'
       ]);
 
-        $group = Group::where(['id', $group->id])->update(['name' => $request->name ]);
+        $group = Group::where('id', '=', $group->id)->update(['name' => $request->name ]);
         $request->session()->flash('success', 'Changement réussie.');
         return back();
 
