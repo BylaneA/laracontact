@@ -6,7 +6,7 @@
 
         <div class="col-md-2">
             <div class="list-group">
-                <a href="" class="btn btn-secondary list-group-item list-group-item-action">
+                <a href="/home" class="btn btn-secondary list-group-item list-group-item-action">
                     Groupes &nbsp; <span class="badge badge-info">{{ $group_number }}</span>
                 </a>
                 <a href="" class="btn btn-secondary list-group-item list-group-item-action">
@@ -16,6 +16,11 @@
         </div>
 
           <div class="col-md-10">
+            @if( Session::has( 'success' ))
+                {{ Session::get( 'success' ) }}
+            @elseif( Session::has( 'warning' ))
+                {{ Session::get( 'warning' ) }} 
+            @endif
                 <div class="card card-default">
                     <div class="card-header bg-info text-white">Edition groupe : {{ $group->id}}</div>
                     <div class="card-body">

@@ -33,3 +33,8 @@ Route::post('/group/update/{goup}',[
   'uses' => 'GroupController@update',
   'as' => 'group.update'
 ]);
+
+Route::get('/group/delete/{group}', [
+  'uses' => 'GroupController@destroy',
+  'as' => 'group.delete'
+]);
