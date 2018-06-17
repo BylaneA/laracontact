@@ -21,8 +21,9 @@
                 <div class="card-header bg-info text-white">Liste des contacts</div>
                 <div class="card-body">
                     <p>
-                        <button class="btn btn-success" type="button" data-toggle="modal" data-target="#addGroup" data-whatever="@getbootstrap">Nouveau</button>
+                        <button class="btn btn-success" type="button" data-toggle="modal" data-target="#addContact" data-whatever="@getbootstrap">Nouveau</button>
                     </p>
+                    @include('contacts.table')
                 </div>
             </div>
             {{ $contacts->links() }}

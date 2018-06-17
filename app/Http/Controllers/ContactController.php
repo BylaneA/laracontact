@@ -17,7 +17,7 @@ class ContactController extends Controller
     {
         $contacts = Auth::user()->contacts()->paginate(5);
 
-        return view('contacts.index', compact('contacts', $contacts));
+        return view('contacts.index')->with('contacts', $contacts);
     }
 
     /**
