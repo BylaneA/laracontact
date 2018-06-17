@@ -32,4 +32,5 @@
     </div>
 
 </div>
+@include('contacts.add')
 @endsection
