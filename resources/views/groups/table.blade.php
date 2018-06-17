@@ -13,7 +13,7 @@
                 <td>{{ $g->name }}</td>
                 <th>{{ $g->contacts()->count() }}</th>
                 <td colspan="3" class="text-center">
-                    <a class="btn btn-info btn-sm" href="">details</a>
+                    <a class="btn btn-info btn-sm" href="{{ route('group.show', ['group' => $g->id]) }}">details</a>
                     <a class="btn btn-warning btn-sm" href="{{ route('group.edit', ['group' => $g->id]) }}">editer</a>
                     <a class="btn btn-danger btn-sm" href="{{ route('group.delete', ['group' => $g->id]) }}">supprimer</a>
                 </td>
