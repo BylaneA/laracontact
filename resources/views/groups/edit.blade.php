@@ -3,23 +3,12 @@
 @section('content')
   <div class="container">
       <div class="row">
-
-        <div class="col-md-2">
-            <div class="list-group">
-                <a href="/home" class="btn btn-secondary list-group-item list-group-item-action">
-                    Groupes &nbsp; <span class="badge badge-info">{{ $group_number }}</span>
-                </a>
-                <a href="" class="btn btn-secondary list-group-item list-group-item-action">
-                    Contacts &nbsp; <span class="badge badge-info">{{ $contact_number }}</span>
-                </a>
-            </div>
-        </div>
-
+          @include('layouts.sidebar')
           <div class="col-md-10">
             @if( Session::has( 'success' ))
                 {{ Session::get( 'success' ) }}
             @elseif( Session::has( 'warning' ))
-                {{ Session::get( 'warning' ) }} 
+                {{ Session::get( 'warning' ) }}
             @endif
                 <div class="card card-default">
                     <div class="card-header bg-info text-white">Edition groupe : {{ $group->id}}</div>
