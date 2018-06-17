@@ -43,3 +43,5 @@ Route::get('/group/delete/{group}', [
   'uses' => 'GroupController@destroy',
   'as' => 'group.delete'
 ]);
+
+Route::get('/contacts', 'ContactController@index')->name('contacts');

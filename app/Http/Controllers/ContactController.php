@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Model\Contact;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Auth::user()->contacts()->paginate(5);
+
+        return view('contacts.index', compact('contacts', $contacts));
     }
 
     /**
