@@ -30,7 +30,12 @@
                         <div class="form-group">
                             <input value=" {{ $contact->birthday }} " disabled type="text" class="form-control" name="birthday">
                         </div>
-
+                        <!-- afficher ses groupes -->
+                        <div class="form-control">
+                            @foreach($groups as $g)
+                              <p> {{ $g->name}}</p>
+                            @endforeach
+                        </div>
                         <a href="{{ route('contacts') }}" class="btn btn-link btn-sm">Retour</a>
                     </form>
                 </div>
