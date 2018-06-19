@@ -34,3 +34,12 @@
 </div>
 @include('contacts.add')
 @endsection
+
+@section('script')
+  $('document').ready(function () {
+    $('#groupe').multiSelect({
+      selectableHeader:"<span class='text-info'>Groupes</span>",
+      selectionHeader:"<span class='text-info'>Groupes selectionnés</span>"
+    })
+  });
+@endsection

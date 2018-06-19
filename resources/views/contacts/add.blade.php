@@ -31,6 +31,13 @@
                     <div class="form-group">
                         <input type="date" class="form-control" name="birthday">
                     </div>
+                    <div class="form-group">
+                      <select multiple name="groups[]" id="groupe">
+                        @foreach(Auth::user()->groups as $g)
+                          <option value="{{ $g->id}}">{{ $g->name}}</option>
+                        @endforeach
+                      </select>
+                    </div>
                     <button type="submit" class="btn btn-success btn-sm">Ajouter</button>
                 </form>
             </div>

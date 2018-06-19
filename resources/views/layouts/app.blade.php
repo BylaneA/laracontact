@@ -11,7 +11,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('multi-select/js/jquery.multi-select.js')}}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -19,6 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('multi-select/css/multi-select.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -70,6 +72,9 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <script>
+          @yield('script')
+        </script>
     </div>
 </body>
 </html>
