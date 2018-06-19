@@ -50,3 +50,8 @@ Route::post('/contacts',[
   'uses' => 'ContactController@store',
   'as' => 'contact.store'
 ]);
+
+Route::get('/contact/show/{contact}', [
+  'uses' => 'ContactController@show',
+  'as' => 'contact.show'
+]);

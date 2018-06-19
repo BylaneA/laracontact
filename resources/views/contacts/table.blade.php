@@ -15,7 +15,7 @@
                 <th>{{ $c->phone }}</th>
                 <th>{{ $c->email }}</th>
                 <td colspan="3" class="text-center">
-                    <a class="btn btn-info btn-sm" href="">details</a>
+                    <a class="btn btn-info btn-sm" href="{{ route('contact.show', ['contact' => $c->id]) }}">details</a>
                     <a class="btn btn-warning btn-sm" href="">editer</a>
                     <a class="btn btn-danger btn-sm" href="">supprimer</a>
                 </td>
