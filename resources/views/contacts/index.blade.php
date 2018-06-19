@@ -12,11 +12,6 @@
           @elseif( Session::has( 'warning' ))
               {{ Session::get( 'warning' ) }}
           @endif
-          @if($errors->has('name'))
-            @alert(['type' => 'danger'])
-              Le champs ne peut être vide
-            @endalert
-          @endif
             <div class="card card-default">
                 <div class="card-header bg-info text-white">Liste des contacts</div>
                 <div class="card-body">

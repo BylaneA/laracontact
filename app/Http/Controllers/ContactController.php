@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use Carbon\Carbon;
+use DB;
 use App\Model\Contact;
 use Illuminate\Http\Request;
 
@@ -38,7 +40,36 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $this->validate($request, [
+            'fullname' => 'required|min:2',
+            'function' => 'required|min:5',
+            'title' => 'required',
+            'phone' => 'required',
+            'email' => 'required|email',
+            'address' => 'required',
+            'birthday' => 'required|date'
+        ]);
+        $contact = Auth::user()->contacts()->create([
+            'fullname' => $request->fullname,
+            'title' => $request->title,
+            'function' => $request->function,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'address' => $request->address,
+            'birthday' => $request->birthday
+        ]);
+        foreach($request->groups as $g)
+        {
+            // insertion du groupe selectionne dans la table intermediaire
+            DB::table('group_contact')->insert([
+                'contact_id' => $contact->id,
+                'group_id' => $g,
+                'created_at' => Carbon::now()
+            ]);
+        }
+
+        $request->session()->flash('success', 'Insertion réussie.');
+        return back();
     }
 
     /**

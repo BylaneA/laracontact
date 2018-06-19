@@ -46,7 +46,7 @@ Route::get('/group/delete/{group}', [
 
 Route::get('/contacts', 'ContactController@index')->name('contacts');
 
-Route::post('/contacts)',[
+Route::post('/contacts',[
   'uses' => 'ContactController@store',
   'as' => 'contact.store'
 ]);
