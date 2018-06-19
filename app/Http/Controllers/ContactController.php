@@ -82,7 +82,7 @@ class ContactController extends Controller
     {
       $groups = DB::table('groups')
                 ->join('group_contact', 'groups.id', '=', 'group_contact.group_id')
-                ->select('groups.*', 'group_contact.contact_id')
+                ->select('groups.name', 'group_contact.contact_id')
                 ->get();
 
    return view('contacts.show')->with('contact', $contact)
