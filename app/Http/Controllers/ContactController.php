@@ -81,12 +81,12 @@ class ContactController extends Controller
     public function show(Contact $contact)
     {
       $groups = DB::table('groups')
-                ->join('group_contact', 'groups.id', '=', 'group_contact.group_id')
-                ->select('groups.name', 'group_contact.contact_id')
-                ->get();
-
-   return view('contacts.show')->with('contact', $contact)
-                                ->with('groups', $groups);
++                ->join('group_contact', 'groups.id', '=', 'group_contact.group_id')
++                ->select('groups.*', 'group_contact.contact_id')
++                ->get();
++
++   return view('contacts.show')->with('contact', $contact)
++                                ->with('groups', $groups);
     }
 
     /**
